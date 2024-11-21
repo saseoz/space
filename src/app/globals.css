@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue-900: #0B0D17;
+  --blue-300: #D0D6F9;
+}
+/* background setting */
+body {
+  background: url('/home/background-home-mobile.jpg'), black;
+}
+
+.destination-bg {
+  background-image: url('/destination/background-destination-mobile.jpg');
+}
+
+.crew-bg {
+  background-image: url('/crew/background-crew-mobile.jpg');
+}
+
+.tech-bg {
+  background-image: url('/technology/background-technology-mobile.jpg');
+}
+
+@media (min-width: 550px) {
+  body {
+    background-image: url('/home/background-home-tablet.jpg');
+  }
+
+  .destination-bg {
+    background-image: url('/destination/background-destination-tablet.jpg');
+  }
+
+  .crew-bg {
+    background-image: url('/crew/background-crew-tablet.jpg');
+  }
+
+  .tech-bg {
+    background-image: url('/technology/background-technology-tablet.jpg');
+  }
+
+}
+
+@media (min-width:768px) {
+  body {
+    background-image: url('/home/background-home-desktop.jpg');
+  }
+
+  .destination-bg {
+    background-image: url('/destination/background-destination-desktop.jpg');
+  }
+
+  .crew-bg {
+    background-image: url('/crew/background-crew-desktop.jpg');
+  }
+
+  .tech-bg {
+    background-image: url('/technology/background-technology-desktop.jpg');
+  }
+}
+
+/* explore button */
+.explore-btn::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.181);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transition: transform 500ms ease-in-out;
+}
+
+.explore-btn:hover::after,
+.explore-btn:focus::after {
+  transform: scale(1.5)
+}
+/* header */
+.blur-effect {
+  background: hsla(0, 0%, 100%, 0.087);
+  backdrop-filter: blur(30px);
+}
+/* nav indicator */
+@media(max-width: 550px) {
+  nav ul li:hover a:not(.nav-indicator) {
+    border-right: 3px solid hsla(0, 0%, 100%, 0.5);
+  }
+
+  .nav-indicator {
+    border-right: 3px solid rgb(255, 255, 255);
+  }
+}
+
+@media (min-width: 550px) {
+  nav ul li:hover a:not(.nav-indicator) {
+    padding-block: 1.5rem;
+    border-bottom: 3px solid hsla(0, 0%, 100%, 0.5);
+  }
+
+  .nav-indicator {
+    padding-block: 1.5rem;
+    border-bottom: 3px solid rgb(255, 255, 255);
+  }
+}
+
+.sub-title {
+  display: flex;
+  gap: 1.5rem;
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', 'sans-serif';
+  letter-spacing: .15em;
+  font-size: clamp(1rem, 2.5vw, 1.75rem);
+}
+.sub-title span {
+  font-weight: bold;
+  opacity: .5;
+}
+
+.main-par {
+  color: var(--blue-300);
+  font-size: clamp(.938rem, 4vw, 1.125rem);
+  line-height: 180%;
+}
+
+.destination h2 {
+  font-size: clamp(3.5rem, 4vw, 6rem);
+  font-family: 'Bellefair', 'serif';
+  font-weight: 400;
+}
+
+.crew h1,
+.tech h1 {
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.crew h1 span {
+  font-size: clamp(1.125rem, 4vw, 2rem)
+}
+.img-filter {
+  box-shadow: inset 0 -10px 20px 10px rgba(24, 22, 22, 0.851);
+}
+
+main>.destination,
+main>.crew,
+main>.tech {
+  margin-inline: auto;
+  max-width: 1350px;
+  width: 100%;
+}
+
+.text-clamp {
+  font-size: clamp(1.125rem, 2vw, 2rem);
+}
+
+@media(max-width: 550px) {
+  .nav-list {
+    gap: clamp(.5rem, 4vh, 3rem);
+  }
+
+  nav ul {
+    gap: clamp(1rem, 5vh, 2rem);
+  }
+
+  .hidden {
+    display: none;
+  }
+ 
+}
+
+/* tablet */
+@media (min-width: 550px) {
+  header nav ul {
+    gap: clamp(.1rem, 2vw, 3rem);
+    padding-inline: clamp(1rem, 5vw, 4rem);
+  }
+
+  header nav li span {
+    padding-right: clamp(.1rem, 1vw, .75rem);
+  }
+
+  .logo-wrap {
+    padding-inline: clamp(1.5rem, 3vw, 4rem)
+  }
+}
+
+/* desktop */
+@media (min-width:768px) {
+  main>.home {
+    padding-inline: clamp(1rem, 5vw, 10.313rem);
+    padding-block: clamp(1rem, 15vh, 8rem);
+  }
+  main>.destination,
+  main>.crew,
+  main>.tech {
+    padding-block: clamp(1rem, 5vh, 3rem);
+  }
+}
